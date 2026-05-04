@@ -144,6 +144,15 @@
   font-weight: 600;
   color: var(--color-text);
   margin: 0 0 var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.cardIcon {
+  font-size: 1.1em;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .cardDescription {

@@ -88,6 +88,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                         }
                         onClick={handleToolClick}
                       >
+                        <span className={styles.toolIcon}>{tool.icon}</span>
                         {tool.name}
                       </NavLink>
                     </li>

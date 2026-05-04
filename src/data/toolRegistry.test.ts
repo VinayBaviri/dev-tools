@@ -11,9 +11,9 @@ describe('toolRegistry', () => {
     expect(toolCategories).toHaveLength(9);
   });
 
-  it('contains exactly 27 tools across all categories', () => {
-    expect(getToolCount()).toBe(27);
-    expect(getAllTools()).toHaveLength(27);
+  it('contains exactly 29 tools across all categories', () => {
+    expect(getToolCount()).toBe(29);
+    expect(getAllTools()).toHaveLength(29);
   });
 
   it('each category has an id, name, icon, and at least one tool', () => {
@@ -31,6 +31,7 @@ describe('toolRegistry', () => {
       expect(tool.name).toBeTruthy();
       expect(tool.description).toBeTruthy();
       expect(tool.path).toBeTruthy();
+      expect(tool.icon).toBeTruthy();
       expect(tool.category).toBeDefined();
       expect(tool.keywords.length).toBeGreaterThan(0);
     }
@@ -81,14 +82,14 @@ describe('toolRegistry', () => {
       counts[category.id] = category.tools.length;
     }
     expect(counts).toEqual({
-      url: 3,
-      html: 5,
-      markdown: 2,
-      js: 2,
-      json: 5,
-      db: 2,
-      random: 4,
       base64: 3,
+      db: 2,
+      html: 5,
+      js: 2,
+      json: 7,
+      markdown: 2,
+      random: 4,
+      url: 3,
       utility: 1,
     });
   });

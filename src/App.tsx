@@ -20,6 +20,8 @@ import JSONValidatorPage from './pages/json/JSONValidatorPage';
 import JSONMinifierPage from './pages/json/JSONMinifierPage';
 import JSONToCSVPage from './pages/json/JSONToCSVPage';
 import JSONTreeViewerPage from './pages/json/JSONTreeViewerPage';
+import JSONEscapePage from './pages/json/JSONEscapePage';
+import JSONUnescapePage from './pages/json/JSONUnescapePage';
 import SQLFormatterPage from './pages/db/SQLFormatterPage';
 import MockDataGeneratorPage from './pages/db/MockDataGeneratorPage';
 import UUIDGeneratorPage from './pages/random/UUIDGeneratorPage';
@@ -92,11 +94,13 @@ function App() {
               <Route path="/js/minify" element={<JSMinifierPage />} />
 
               {/* JSON Tools */}
+              <Route path="/json/escape" element={<JSONEscapePage />} />
               <Route path="/json/format" element={<JSONFormatterPage />} />
-              <Route path="/json/validate" element={<JSONValidatorPage />} />
               <Route path="/json/minify" element={<JSONMinifierPage />} />
               <Route path="/json/to-csv" element={<JSONToCSVPage />} />
               <Route path="/json/tree" element={<JSONTreeViewerPage />} />
+              <Route path="/json/unescape" element={<JSONUnescapePage />} />
+              <Route path="/json/validate" element={<JSONValidatorPage />} />
 
               {/* Database Tools */}
               <Route path="/db/sql-format" element={<SQLFormatterPage />} />

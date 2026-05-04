@@ -61,7 +61,10 @@ export default function HomePage() {
           <div className={styles.cardGrid}>
             {category.tools.map((tool) => (
               <Link key={tool.id} to={tool.path} className={styles.card}>
-                <h3 className={styles.cardName}>{tool.name}</h3>
+                <h3 className={styles.cardName}>
+                  <span className={styles.cardIcon}>{tool.icon}</span>
+                  {tool.name}
+                </h3>
                 <p className={styles.cardDescription}>{tool.description}</p>
               </Link>
             ))}

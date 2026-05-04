@@ -155,3 +155,38 @@ export function jsonToCSV(input: string): string {
 
   return [headerRow, ...dataRows].join('\n');
 }
+
+/**
+ * Escapes a JSON string so it can be safely embedded inside another JSON string value.
+ * Converts characters like quotes, backslashes, newlines, and tabs to their escape sequences.
+ *
+ * @param input - The string to escape for JSON embedding.
+ * @returns The escaped string.
+ */
+export function jsonEscape(input: string): string {
+  return input
+    .replace(/\\/g, '\\\\')
+    .replace(/"/g, '\\"')
+    .replace(/\n/g, '\\n')
+    .replace(/\r/g, '\\r')
+    .replace(/\t/g, '\\t')
+    .replace(/\f/g, '\\f')
+    .replace(/\b/g, '\\b');
+}
+
+/**
+ * Unescapes a JSON-escaped string, converting escape sequences back to their original characters.
+ *
+ * @param input - The JSON-escaped string to unescape.
+ * @returns The unescaped string.
+ */
+export function jsonUnescape(input: string): string {
+  return input
+    .replace(/\\"/g, '"')
+    .replace(/\\n/g, '\n')
+    .replace(/\\r/g, '\r')
+    .replace(/\\t/g, '\t')
+    .replace(/\\f/g, '\f')
+    .replace(/\\b/g, '\b')
+    .replace(/\\\\/g, '\\');
+}
