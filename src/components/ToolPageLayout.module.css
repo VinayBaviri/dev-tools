@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.description {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-md);
+  flex: 1;
+  min-height: 0;
+}
+
+/* Each direct child (InputArea, OutputArea) takes equal width */
+.content > * {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===========================
+   Responsive adjustments
+   =========================== */
+
+@media (max-width: 767px) {
+  .container {
+    padding: var(--space-md) var(--space-sm);
+    gap: var(--space-md);
+    min-height: auto;
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .content {
+    flex-direction: column;
+  }
+}

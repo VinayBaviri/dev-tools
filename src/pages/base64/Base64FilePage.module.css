@@ -1,0 +1,24 @@
+.uploadContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.fileInput {
+  color: var(--color-text);
+}
+
+.sizeInfo {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}

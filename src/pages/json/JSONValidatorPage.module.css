@@ -1,0 +1,33 @@
+.result {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+.valid {
+  color: var(--color-success);
+  background-color: var(--color-success-light);
+  border: 1px solid var(--color-success);
+}
+
+.invalid {
+  color: var(--color-error);
+  background-color: var(--color-error-light);
+  border: 1px solid var(--color-error);
+}
+
+.icon {
+  font-size: var(--font-size-xl);
+  flex-shrink: 0;
+}
+
+.message {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

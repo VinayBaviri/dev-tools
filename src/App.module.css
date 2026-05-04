@@ -1,0 +1,120 @@
+/* ===========================
+   App Shell Layout Styles
+   =========================== */
+
+.appShell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  height: 100vh;
+  overflow: hidden;
+  transition: margin-left var(--transition-normal);
+}
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 200;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  line-height: 1;
+}
+
+.hamburger:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* Overlay behind sidebar on mobile */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Global footer */
+.pageContent {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  flex-shrink: 0;
+  height: var(--footer-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--color-border-light);
+  text-align: center;
+}
+
+.footerText {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin: 0 0 2px;
+}
+
+.footerCredit {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.footerSep {
+  margin: 0 6px;
+  color: var(--color-text-muted);
+}
+
+.footerLink {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   Mobile responsive behavior
+   =========================== */
+
+@media (max-width: 767px) {
+  .main {
+    margin-left: 0;
+    padding-top: 56px; /* space for hamburger */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .overlayVisible {
+    display: block;
+  }
+}

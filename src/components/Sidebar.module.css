@@ -1,0 +1,229 @@
+/* ===========================
+   Sidebar Component Styles
+   =========================== */
+
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-border-light);
+  overflow: hidden;
+  z-index: 100;
+  transition: transform var(--transition-normal);
+}
+
+/* Home link at the top */
+.homeSection {
+  flex-shrink: 0;
+  padding: var(--space-md) var(--space-md) 0;
+}
+
+.homeLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.homeLink:hover {
+  color: var(--color-text);
+  background-color: var(--color-sidebar-hover);
+  text-decoration: none;
+}
+
+.homeLinkActive {
+  color: var(--color-primary);
+  background-color: var(--color-sidebar-active);
+}
+
+.homeIcon {
+  font-size: var(--font-size-md);
+  line-height: 1;
+}
+
+/* Search area at the top */
+.searchArea {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border-light);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.searchInput:focus {
+  border-color: var(--color-primary);
+}
+
+/* Scrollable navigation area */
+.nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-sm) 0;
+}
+
+/* Category group */
+.categoryGroup {
+  margin-bottom: var(--space-xs);
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--transition-fast),
+    background-color var(--transition-fast);
+  gap: var(--space-sm);
+}
+
+.categoryHeader:hover {
+  color: var(--color-text);
+  background-color: var(--color-sidebar-hover);
+}
+
+.categoryIcon {
+  flex-shrink: 0;
+  font-size: var(--font-size-md);
+  line-height: 1;
+}
+
+.categoryName {
+  flex: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: var(--font-size-xs);
+}
+
+.chevron {
+  flex-shrink: 0;
+  font-size: var(--font-size-xs);
+  transition: transform var(--transition-fast);
+}
+
+.chevronCollapsed {
+  transform: rotate(-90deg);
+}
+
+/* Tool list */
+.toolList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toolLink {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  padding-left: calc(var(--space-md) + var(--space-md) + var(--space-sm));
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.toolLink:hover {
+  color: var(--color-text);
+  background-color: var(--color-sidebar-hover);
+  text-decoration: none;
+}
+
+.toolLinkActive {
+  color: var(--color-primary);
+  background-color: var(--color-sidebar-active);
+  border-left-color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* Footer with theme toggle — aligned with app footer */
+.footer {
+  flex-shrink: 0;
+  height: var(--footer-height);
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-md);
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.themeToggle:hover {
+  color: var(--color-text);
+  background-color: var(--color-sidebar-hover);
+}
+
+.themeLabel {
+  flex: 1;
+  text-align: left;
+}
+
+/* ===========================
+   Mobile responsive behavior
+   =========================== */
+
+@media (max-width: 767px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+@media (min-width: 768px) {
+  /* On desktop the sidebar is always visible regardless of isOpen */
+  .sidebar {
+    transform: translateX(0);
+  }
+}
