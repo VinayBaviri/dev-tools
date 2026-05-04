@@ -88,14 +88,14 @@ addTool(utilityCategory, 'jira-id-extractor', 'Jira ID Extractor', 'Extract Jira
 
 // --- Exported registry ---
 export const toolCategories: ToolCategory[] = [
-  urlCategory,
+  base64Category,
+  dbCategory,
   htmlCategory,
-  markdownCategory,
   jsCategory,
   jsonCategory,
-  dbCategory,
+  markdownCategory,
   randomCategory,
-  base64Category,
+  urlCategory,
   utilityCategory,
 ];
 

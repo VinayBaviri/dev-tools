@@ -63,14 +63,14 @@ describe('toolRegistry', () => {
   it('has the expected category names in order', () => {
     const names = toolCategories.map((c) => c.name);
     expect(names).toEqual([
-      'URL Tools',
+      'Base64 Tools',
+      'Database Tools',
       'HTML Tools',
-      'Markdown Tools',
       'JavaScript Tools',
       'JSON Tools',
-      'Database Tools',
+      'Markdown Tools',
       'Randomizer Tools',
-      'Base64 Tools',
+      'URL Tools',
       'Utility Tools',
     ]);
   });
