@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { generateMockData, MockDataConfig } from './mockdata';
+import { generateMockData } from './mockdata';
+import type { MockDataConfig } from './mockdata';
 
 describe('generateMockData', () => {
   const baseConfig: MockDataConfig = {

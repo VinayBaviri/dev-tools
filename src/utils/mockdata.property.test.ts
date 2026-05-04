@@ -3,7 +3,8 @@
 
 import { describe, it, expect } from 'vitest';
 import * as fc from 'fast-check';
-import { generateMockData, ColumnDefinition, MockDataConfig } from './mockdata';
+import { generateMockData } from './mockdata';
+import type { ColumnDefinition, MockDataConfig } from './mockdata';
 
 /**
  * Supported column types for mock data generation.

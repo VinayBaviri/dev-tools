@@ -10,8 +10,8 @@ import {
   generatePassword,
   randomInteger,
   generateLoremIpsum,
-  PasswordOptions,
 } from './random';
+import type { PasswordOptions } from './random';
 
 /**
  * UUID v4 regex pattern per RFC 4122:
